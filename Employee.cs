@@ -4,67 +4,67 @@ namespace Lab2
 {
     internal class Employee
     {
-        private string name;
-        private Department department;
-        private string position;
+        private string _name;
+        private Department _department;
+        private string _position;
 
         public Employee(string name, Department department)
         {
-            this.name = name;
-            this.department = department;
-            this.position = "сотрудник";
+            this._name = name;
+            this._department = department;
+            this._position = "сотрудник";
         }
 
         public string Name
         {
-            get { return this.name; }
+            get { return this._name; }
             set { 
                     if (value != null)
                     {
-                        this.name = value;
+                        this._name = value;
                     }
                     else
                     {
-                        this.name = "Неизвестно";
+                        this._name = "Неизвестно";
                     }
                 }
         }
 
         public Department Department
         {
-            get { return this.department; }
-            set { this.department = value; }
+            get { return this._department; }
+            set { this._department = value; }
         }
 
         public string Position
         {
-            get { return this.position; }
-            set { this.position = value; }
+            get { return this._position; }
+            set { this._position = value; }
         }
 
         public void MakeManager()
         {
-            this.position = "начальник отдела";
+            this._position = "начальник отдела";
         }
 
         public List<Employee> GetDepartmentEmployees()
         {
-            if (this.department != null)
+            if (this._department != null)
             {
-                return this.department.Employees;
+                return this._department.Employees;
             }
             return new List<Employee>();
         }
 
         public override string ToString()
         {
-            if (position == "начальник отдела")
+            if (_position == "начальник отдела")
             {
-                return $"{name} начальник отдела {department.Name}";
+                return $"{_name} начальник отдела {_department.Name}";
             }
             else
             {
-                return $"{name} работает в отделе {department.Name}";
+                return $"{_name} работает в отделе {_department.Name}";
             }
         }
     }
