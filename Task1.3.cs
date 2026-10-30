@@ -2,88 +2,88 @@ using System;
 
 namespace Lab2
 {
-    internal class Fio
+    internal class FullName
     {
-        private string? lastName;
-        private string? firstName;
-        private string? middleName;
+        private string? _lastName;
+        private string? _firstName;
+        private string? _patronymic;
 
-        public Fio(
-            string? lastName,
-            string? firstName, 
-            string? middleName
+        public FullName(
+            string? _lastName,
+            string? _firstName, 
+            string? _patronymic
             )
         {
-            this.LastName = lastName;
-            this.FirstName = firstName;
-            this.MiddleName = middleName;
+            this.LastName = _lastName;
+            this.FirstName = _firstName;
+            this.MiddleName = _patronymic;
         }
 
-        public Fio()
+        public FullName()
         {
             this.FirstName = null;
             this.LastName = null;
             this.MiddleName = null;
         }
 
-        public Fio(string? lastName, string? firstName)
+        public FullName(string? _lastName, string? _firstName)
         {
-            this.LastName = lastName;
-            this.FirstName = firstName;
+            this.LastName = _lastName;
+            this.FirstName = _firstName;
             this.MiddleName = null;
         }
 
-        public Fio(string? firstName)
+        public FullName(string? _firstName)
         {
             this.LastName = null;
-            this.FirstName = firstName;
+            this.FirstName = _firstName;
             this.MiddleName = null;
         }
 
         public string? LastName 
         {
-            get { return this.lastName; }
+            get { return this._lastName; }
             set
             {
                 if (value != null)
                 {
-                    this.lastName = value;
+                    this._lastName = value;
                 }
                 else
                 {
-                    this.lastName = "";
+                    this._lastName = "";
                 }
             }
         }
 
         public string? FirstName  
         {
-            get { return this.firstName; }
+            get { return this._firstName; }
             set
             {
                 if (value != null)
                 {
-                    this.firstName = value;
+                    this._firstName = value;
                 }
                 else
                 {
-                    this.firstName = "";
+                    this._firstName = "";
                 }
             }
         }
 
         public string? MiddleName  
         {
-            get { return this.middleName; }
+            get { return this._patronymic; }
             set
             {
                 if (value != null)
                 {
-                    this.middleName = value;
+                    this._patronymic = value;
                 }
                 else
                 {
-                    this.middleName = "";
+                    this._patronymic = "";
                 }
             }
         }
@@ -92,27 +92,27 @@ namespace Lab2
         {
             string result = "";
 
-            if (!string.IsNullOrEmpty(lastName))
+            if (!string.IsNullOrEmpty(_lastName))
             {
-                result += lastName;
+                result += _lastName;
             }
 
-            if (!string.IsNullOrEmpty(firstName))
+            if (!string.IsNullOrEmpty(_firstName))
             {
                 if (result.Length > 0)
                 {
                     result += " ";
                 }
-                result += firstName;
+                result += _firstName;
             }
 
-            if (!string.IsNullOrEmpty(middleName))
+            if (!string.IsNullOrEmpty(_patronymic))
             {
                 if (result.Length > 0)
                 {
                     result += " ";
                 }
-                result += middleName;
+                result += _patronymic;
             }
 
             return result;
