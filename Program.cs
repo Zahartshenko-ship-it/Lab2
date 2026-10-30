@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Lab2
@@ -110,26 +110,26 @@ namespace Lab2
             Console.Write("Введите отчество (или оставьте пустым): ");
             string middleName = Console.ReadLine();
 
-            Fio fio;
+            FullName fio;
 
             if (string.IsNullOrWhiteSpace(lastName) &&
             string.IsNullOrWhiteSpace(firstName) &&
             string.IsNullOrWhiteSpace(middleName))
             {
-                fio = new Fio();
+                fio = new FullName();
             }
             else if (string.IsNullOrWhiteSpace(lastName) && 
             string.IsNullOrWhiteSpace(middleName))
             {
-                fio = new Fio(firstName);
+                fio = new FullName(firstName);
             }
             else if (string.IsNullOrWhiteSpace(middleName))
             {
-                fio = new Fio(lastName, firstName);
+                fio = new FullName(lastName, firstName);
             }
             else
             {
-                fio = new Fio(lastName, firstName, middleName);
+                fio = new FullName(lastName, firstName, middleName);
             }
 
             Console.WriteLine("\nРезультат форматирования ФИО:");
@@ -224,7 +224,6 @@ namespace Lab2
                 return;
             }
 
-            // Собираем всех сотрудников из всех отделов в один общий список
             List<Employee> allEmployees = new List<Employee>();
             foreach (var dept in allDepartments)
             {
@@ -291,19 +290,19 @@ namespace Lab2
             }
 
             string[] parts = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            Fio fio;
+            FullName fio;
 
             if (parts.Length == 1)
             {
-                fio = new Fio(parts[0]);
+                fio = new FullName(parts[0]);
             }
             else if (parts.Length == 2)
             {
-                fio = new Fio(parts[1], parts[0]);
+                fio = new FullName(parts[1], parts[0]);
             }
             else
             {
-                fio = new Fio(parts[2], parts[0], parts[1]);
+                fio = new FullName(parts[2], parts[0], parts[1]);
             }
 
             Console.WriteLine("\nСформированное имя:");
