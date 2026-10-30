@@ -5,12 +5,12 @@ namespace Lab2
 {
     internal class Human
     {
-        private string? name;
-        private int height;
+        private string? _name;
+        private int _height;
 
         public Human(int height)
         {
-            this.Name = name;
+            this.Name = _name;
             this.Height = height;
         }
 
@@ -22,32 +22,32 @@ namespace Lab2
 
         public string? Name
         {
-            get { return this.name; }
+            get { return this._name; }
             set
             {
                 if (!string.IsNullOrWhiteSpace(value))
                 {
-                    this.name = value;
+                    this._name = value;
                 }
                 else
                 {
-                    this.name = "Петр";
+                    this._name = "Петр";
                 }
             }
         }
 
         public int Height
         {
-            get { return this.height; }
+            get { return this._height; }
             set
             {
                 if (value > 0)
                 {
-                    this.height = value;
+                    this._height = value;
                 }
                 else
                 {
-                    this.height = 170;
+                    this._height = 170;
                 }
             }
         }
