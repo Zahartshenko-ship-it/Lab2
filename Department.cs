@@ -2,31 +2,31 @@ namespace Lab2
 {
     internal class Department
     {
-        private string name;
-        private List<Employee> employees;
+        private string _name;
+        private List<Employee> _employees;
 
         public Department(string name)
         {
-            this.name = name;
-            this.employees = new List<Employee>();
+            this._name = name;
+            this._employees = new List<Employee>();
         }
 
         public string Name
         {
-            get {return this.name;}
-            set {this.name = value;}
+            get {return this._name;}
+            set {this._name = value;}
         }
 
         public List<Employee> Employees
         {
-            get { return this.employees; }
+            get { return this._employees; }
         }
 
         public void AddEmployee(Employee employee)
         {
-            if (employee != null && !this.employees.Contains(employee))
+            if (employee != null && !this._employees.Contains(employee))
             {
-                this.employees.Add(employee);
+                this._employees.Add(employee);
             }
         }
 
